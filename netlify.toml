@@ -1,0 +1,21 @@
+[build]
+  # Komenda budująca Twoją aplikację
+  command = "npm run build"
+  # Folder, który Netlify ma wystawić do sieci (Vite domyślnie generuje 'dist')
+  publish = "dist"
+
+[[redirects]]
+  # Obsługa React Routera (jeśli go użyjesz w przyszłości)
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/*.mjs"
+  [headers.values]
+    Content-Type = "application/javascript"
